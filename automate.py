@@ -8,6 +8,9 @@ import random
 repo = 'https://github.com/CROOOME/automated_bughit.git'
 repo_dir = None
 
+current_path = Path.cwd()
+parent_path = current_path.parent
+
 # Checks
 if repo_dir is None:
     print("Moving one level up..")
