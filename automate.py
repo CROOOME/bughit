@@ -1,6 +1,7 @@
 import os
 from pathlib2 import Path
 import random
+import subprocess
 
 
 # read from file or params
@@ -20,4 +21,19 @@ if repo_dir is None:
 
 
 # clone repo:
-print(os.getcwd())
+f = os.listdir(str(repo_dir.absolute()))
+print(f)
+if repo_name not in f:
+    # Clone repo
+    os.chdir(str(repo_dir))
+    print("CWD:", os.getcwd())
+
+    bashCommand = "git clone {}".format(repo)
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    output, error = process.communicate()
+
+    print(output, error)
+
+
+f = os.listdir(str(repo_dir.absolute()))
+print(f)
