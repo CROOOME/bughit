@@ -11,6 +11,10 @@ repo_dir = None
 # Checks
 if repo_dir is None:
     print("Moving one level up..")
+    print("{} -> {}".format(current_path, parent_path))
+    repo_dir = parent_path
+    print("repo_dir:", repo_dir)
+
 
 # clone repo:
 print(os.getcwd())
