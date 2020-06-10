@@ -5,18 +5,20 @@ import subprocess
 
 
 # read from file or params
-min_commits = 5
-max_commits = 20
-range_of_commits = random.randrange(min_commits, max_commits)
-additions = 10
-subtractions = 2
-edits = additions + subtractions
+per_push_min_commits = 5
+per_push_max_commits = 20
+per_push_range_of_commits = random.randrange(per_push_min_commits, per_push_max_commits)
+per_commit_additions = 10
+per_commit_subtractions = 2
+per_commit_edits = per_commit_additions + per_commit_subtractions
+
 repo = 'https://github.com/CROOOME/automated_bughit.git'
 repo_name = repo.split("/")[-1].split(".")[0]
 repo_dir = None
 
 current_path = Path.cwd()
 parent_path = current_path.parent
+
 
 # Checks
 if repo_dir is None:
