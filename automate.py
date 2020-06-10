@@ -7,7 +7,7 @@ import subprocess
 # read from file or params
 min_commits = 5
 max_commits = 20
-range_of_commits = range(min_commits, max_commits)
+range_of_commits = random.randrange(min_commits, max_commits)
 additions = 10
 subtractions = 2
 edits = additions + subtractions
