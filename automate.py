@@ -5,6 +5,9 @@ import subprocess
 
 
 # read from file or params
+min_commits = 5
+max_commits = 20
+range_of_commits = range(min_commits, max_commits)
 repo = 'https://github.com/CROOOME/automated_bughit.git'
 repo_name = repo.split("/")[-1].split(".")[0]
 repo_dir = None
