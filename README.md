@@ -1,3 +1,3 @@
 # bughit
 
-The purpose of this project is to expel the contribution chart.
+The purpose of this project is to add noise to the GitHub contribution chart.
