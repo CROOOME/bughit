@@ -59,10 +59,12 @@ class BugHit:
         if self.DEBUG:
             print('DEBUG....')
 
-        if not os.path.exists(self.repo_dir):
+        if not os.path.exists(str(self.repo_dir)):
             self.clone_repo()
+
+        print(str(self.repo_dir))
 
 
 if __name__ == '__main__':
-    bughit = BugHit(DEBUG=True)
+    bughit = BugHit(DEBUG=False)
     bughit.run()
