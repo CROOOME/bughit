@@ -45,3 +45,16 @@ if repo_name not in f:
 
 f = os.listdir(str(repo_dir.absolute()))
 print(f)
+
+
+repo_path = Path.joinpath(repo_dir, repo_name)
+print(repo_path)
+
+try:
+    os.chdir(str(repo_path))
+    print(os.getcwd())
+except:
+    raise NameError('Cannot move to path: ', str(repo_path))
+
+
+# make a new file
