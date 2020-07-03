@@ -58,3 +58,26 @@ except:
 
 
 # make a new file
+
+class BugHit:
+    def __init__(self):
+        # import settings or use these as defaults
+        self.per_push_min_commits = 5
+        self.per_push_max_commits = 20
+        self.per_push_range_of_commits = random.randrange(per_push_min_commits, per_push_max_commits)
+
+        self.per_commit_additions = 10
+        self.per_commit_subtractions = 2
+        self.per_commit_edits = per_commit_additions + per_commit_subtractions
+
+        # dummy repo we will use to make commits
+        self.repo = 'https://github.com/CROOOME/automated_bughit.git'
+        self.repo_name = repo.split("/")[-1].split(".")[0]
+        self.repo_dir = None
+
+        self.current_path = Path.cwd()
+        self.parent_path = current_path.parent
+
+
+if __name__ == '__main__':
+    pass
