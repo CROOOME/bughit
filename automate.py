@@ -24,6 +24,11 @@ class BugHit:
         self.repo_name = self.repo.split("/")[-1].split(".")[0]             # default: repo_name [excluding extension]
         self.repo_dir = Path.joinpath(self.parent_path, self.repo_name)
 
+        self.commands = [
+            'git add {}'.format('new_file'),    # make_file
+            "git commit -m '{}'".format('commit message to be filled here')
+        ]
+
     def clone_repo(self):
         # clone repo:
         f = os.listdir(str(self.repo_dir.absolute()))
