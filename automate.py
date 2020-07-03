@@ -39,12 +39,13 @@ class BugHit:
             print("CWD:", os.getcwd())
 
             clone_repo = "git clone {}".format(self.repo)
-            self.run_command(clone_repo)
+            output, error = self.run_command(clone_repo)
+            print(output, error)
 
     def run_command(self, cmd):
         process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
         output, error = process.communicate()
-        print(output, error)
+        return output, error
 
     def sample(self):
         try:
@@ -57,7 +58,6 @@ class BugHit:
         print('Luckycharms starting...')
         if self.DEBUG:
             print('DEBUG....')
-            exit(1)
 
         if not os.path.exists(self.repo_dir):
             self.clone_repo()
