@@ -33,11 +33,13 @@ class BugHit:
             os.chdir(str(self.repo_dir))
             print("CWD:", os.getcwd())
 
-            bashCommand = "git clone {}".format(self.repo)
-            process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-            output, error = process.communicate()
+            clone_repo = "git clone {}".format(self.repo)
+            self.run_command(clone_repo)
 
-            print(output, error)
+    def run_command(self, cmd):
+        process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
+        output, error = process.communicate()
+        print(output, error)
 
     def sample(self):
         try:
