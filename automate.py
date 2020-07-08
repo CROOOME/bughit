@@ -42,6 +42,22 @@ class BugHit:
             output, error = self.run_command(clone_repo)
             print(output, error)
 
+    def root_dir(self):
+        if str(os.getcwd()) == str(self.repo_dir):
+            print("match:")
+            print('cwd:\t{}'.format(str(os.getcwd())))
+            print('repo:\t{}'.format(str(self.repo_dir)))
+            return
+        else:
+            print("changing to root dir")
+            print("NO match:")
+            print('cwd:\t{}'.format(str(os.getcwd())))
+            print('repo:\t{}'.format(str(self.repo_dir)))
+            os.chdir(str(self.repo_dir))
+            self.root_dir()
+
+
+
     def run_command(self, cmd):
         process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
         output, error = process.communicate()
@@ -62,6 +78,7 @@ class BugHit:
         if not os.path.exists(str(self.repo_dir)):
             self.clone_repo()
 
+        self.root_dir()
         print(str(self.repo_dir))
 
 
