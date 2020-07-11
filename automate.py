@@ -73,11 +73,16 @@ class BugHit:
 
     def edit_file(self, file):
         # edit file
+
+        code = 'Random words here'
+
         f = open(file, "w+")
-        f.write('Random words here')
+        f.write(code)
         f.close()
 
-        #self.git_commit()
+        message = code.split(' ')[0:2]
+        print('message:', message)
+        self.git_commit(message)
 
     def make_file(self):
         # make_file
