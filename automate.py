@@ -56,6 +56,17 @@ class BugHit:
             output, error = self.run_command(clone_repo)
             print(output, error)
 
+    def make_file(self):
+        # make_file
+
+        new_file = 'edits.{}'.format('txt')
+        f = open(new_file, "w+")
+        f.close()
+
+        print('New file: ', os.path.isfile(new_file))
+
+        #self.git_add(new_file)
+
     def run_command(self, cmd):
         process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
         output, error = process.communicate()
@@ -78,6 +89,9 @@ class BugHit:
 
         self.root_dir()
         print(str(self.repo_dir))
+
+        self.make_file()
+
 
 
 if __name__ == '__main__':
