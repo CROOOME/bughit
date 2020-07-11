@@ -52,9 +52,12 @@ class BugHit:
             os.chdir(str(self.repo_dir))
             print("CWD:", os.getcwd())
 
-            clone_repo = "git clone {}".format(self.repo)
-            output, error = self.run_command(clone_repo)
-            print(output, error)
+            self.git_clone(self.repo)
+
+    def git_clone(self, repo_name):
+        clone_repo = "git clone {}".format(repo_name)
+        output, error = self.run_command(clone_repo)
+        print(output, error)
 
     def git_add(self, file_name):
         # # Add file to git
