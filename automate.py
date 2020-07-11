@@ -117,7 +117,10 @@ class BugHit:
         self.root_dir()
         print(str(self.repo_dir))
 
-        self.make_file()
+
+        new_file = 'edits.{}'.format('txt')
+        self.make_file(new_file)
+        self.edit_file(new_file)
 
 
 
