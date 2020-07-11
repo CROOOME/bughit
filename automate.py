@@ -65,11 +65,19 @@ class BugHit:
         output, error = self.run_command(clone_repo)
         print(output, error)
 
+    def git_commit(self, message):
+        # Git commit
+        clone_repo = "git commit -m {}".format(message)
+        output, error = self.run_command(clone_repo)
+        print(output, error)
+
     def edit_file(self, file):
         # edit file
         f = open(file, "w+")
         f.write('Random words here')
         f.close()
+
+        #self.git_commit()
 
     def make_file(self):
         # make_file
