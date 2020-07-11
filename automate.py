@@ -29,19 +29,6 @@ class BugHit:
             "git commit -m '{}'".format('commit message to be filled here')
         ]
 
-    def clone_repo(self):
-        # clone repo:
-        f = os.listdir(str(self.repo_dir.absolute()))
-        print(f)
-        if self.repo_name not in f:
-            # Clone repo
-            os.chdir(str(self.repo_dir))
-            print("CWD:", os.getcwd())
-
-            clone_repo = "git clone {}".format(self.repo)
-            output, error = self.run_command(clone_repo)
-            print(output, error)
-
     def root_dir(self):
         if str(os.getcwd()) == str(self.repo_dir):
             print("match:")
@@ -56,7 +43,18 @@ class BugHit:
             os.chdir(str(self.repo_dir))
             self.root_dir()
 
+    def clone_repo(self):
+        # clone repo:
+        f = os.listdir(str(self.repo_dir.absolute()))
+        print(f)
+        if self.repo_name not in f:
+            # Clone repo
+            os.chdir(str(self.repo_dir))
+            print("CWD:", os.getcwd())
 
+            clone_repo = "git clone {}".format(self.repo)
+            output, error = self.run_command(clone_repo)
+            print(output, error)
 
     def run_command(self, cmd):
         process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
