@@ -56,6 +56,12 @@ class BugHit:
             output, error = self.run_command(clone_repo)
             print(output, error)
 
+    def git_add(self, file_name):
+        # # Add file to git
+        clone_repo = "git add {}".format(file_name)
+        output, error = self.run_command(clone_repo)
+        print(output, error)
+
     def make_file(self):
         # make_file
 
