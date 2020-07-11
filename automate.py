@@ -84,16 +84,15 @@ class BugHit:
         print('message:', message)
         self.git_commit(message)
 
-    def make_file(self):
+    def make_file(self, file_name):
         # make_file
 
-        new_file = 'edits.{}'.format('txt')
-        f = open(new_file, "w+")
+        f = open(file_name, "w+")
         f.close()
 
-        print('New file: ', os.path.isfile(new_file))
+        print('New file: ', os.path.isfile(file_name))
 
-        #self.git_add(new_file)
+        self.git_add(file_name)
 
     def run_command(self, cmd):
         process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
