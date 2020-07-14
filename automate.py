@@ -76,6 +76,9 @@ class BugHit:
         with open(file, 'r') as f:
             lines = f.readlines()
 
+        delete = [4, 7, 9, 10]
+        # Edit content based on criteria -> line number
+
     def edit_file(self, file):
         # edit file
 
