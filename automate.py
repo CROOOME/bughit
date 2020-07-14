@@ -84,6 +84,7 @@ class BugHit:
                 if i not in delete:
                     f.write(line)
 
+        self.git_add(file)
 
     def edit_file(self, file):
         # edit file
