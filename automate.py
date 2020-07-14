@@ -79,6 +79,11 @@ class BugHit:
 
         delete = [4, 7, 9, 10]
         # Edit content based on criteria -> line number
+        with open(file, 'w') as f:
+            for i, line in enumerate(lines):
+                if i not in delete:
+                    f.write(line)
+
 
     def edit_file(self, file):
         # edit file
