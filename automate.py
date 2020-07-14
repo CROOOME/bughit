@@ -82,6 +82,8 @@ class BugHit:
 
         message = code.split(' ')[0:2]
         print('message:', message)
+
+        self.git_add(file)
         self.git_commit(message)
 
     def make_file(self, file_name):
