@@ -72,7 +72,9 @@ class BugHit:
         print(output, error)
 
     def remove_contents_from_file(self, file):
-        pass
+        # Read content
+        with open(file, 'r') as f:
+            lines = f.readlines()
 
     def edit_file(self, file):
         # edit file
