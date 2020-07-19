@@ -30,7 +30,7 @@ class BugHit:
         ]
 
         self.extensions = [
-            'c', 'cpp', 'py', 'html', 'css', 'js'
+            'c', 'cpp', 'py', 'html', 'css', 'js', 'txt', 'json', 'xml'
         ]
 
     def root_dir(self):
