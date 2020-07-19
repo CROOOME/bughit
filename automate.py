@@ -138,7 +138,7 @@ class BugHit:
         self.root_dir()
         print(str(self.repo_dir))
 
-        new_file = 'edits.{}'.format('txt')
+        new_file = self.make_file_name()
         if not os.path.isfile(new_file):
             self.make_file(new_file)
         self.edit_file(new_file)
