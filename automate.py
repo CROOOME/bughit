@@ -87,8 +87,8 @@ class BugHit:
         self.git_add(file)
 
     def make_file_name(self):
-
-        raise NotImplementedError
+        new_file_name = 'edits.{}'.format('txt')
+        return new_file_name
 
     def edit_file(self, file):
         # edit file
