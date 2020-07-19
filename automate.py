@@ -86,6 +86,10 @@ class BugHit:
 
         self.git_add(file)
 
+    def make_file_name(self):
+
+        raise NotImplementedError
+
     def edit_file(self, file):
         # edit file
 
