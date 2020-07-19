@@ -29,6 +29,10 @@ class BugHit:
             "git commit -m '{}'".format('commit message to be filled here')
         ]
 
+        self.extensions = [
+            'c', 'cpp', 'py', 'html', 'css', 'js'
+        ]
+
     def root_dir(self):
         if str(os.getcwd()) == str(self.repo_dir):
             print("match:")
