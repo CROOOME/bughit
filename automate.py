@@ -20,7 +20,7 @@ class BugHit:
         self.parent_path = self.current_path.parent
 
         # dummy repo we will use to make commits
-        self.repo = 'https://github.com/CROOOME/automated_bughit.git'
+        self.repo = 'https://github.com/{}/automated_bughit.git'
         self.repo_name = self.repo.split("/")[-1].split(".")[0]  # default: repo_name [excluding extension]
         self.repo_dir = Path.joinpath(self.parent_path, self.repo_name)
 
@@ -46,6 +46,12 @@ class BugHit:
             print('repo:\t{}'.format(str(self.repo_dir)))
             os.chdir(str(self.repo_dir))
             self.root_dir()
+
+    def get_origin_name(self):
+        get_origin = "git config remote.origin.url"
+        output, error = self.run_command(get_origin)
+        print(output, error)
+        self.repo.format(output)
 
     def clone_repo(self):
         # clone repo:
